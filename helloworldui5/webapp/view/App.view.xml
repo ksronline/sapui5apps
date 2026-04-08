@@ -1,0 +1,37 @@
+<mvc:View
+    controllerName="com.demo.helloworld.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>homePageTitle}">
+                    <content>
+                        <VBox
+                            class="sapUiSmallMargin"
+                            alignItems="Center"
+                            justifyContent="Center">
+                            <Title
+                                id="helloTitle"
+                                text="{i18n>helloTitleText}"
+                                class="sapUiMediumMarginBottom" />
+                            <Input
+                                id="nameInput"
+                                value="{/recipient/name}"
+                                valueLiveUpdate="true"
+                                width="300px"
+                                class="sapUiSmallMarginBottom" />
+                            <Button
+                                id="helloButton"
+                                text="{i18n>showHelloButtonText}"
+                                press=".onShowHello"
+                                class="sapUiSmallMarginBottom" />
+                        </VBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
