@@ -7,10 +7,17 @@ sap.ui.define([
     return Controller.extend("com.demo.helloworld.controller.App", {
 
         onShowHello: function () {
-            // read msg from i18n model
             var oBundle = this.getView().getModel("i18n").getResourceBundle();
             var sRecipient = this.getView().getModel().getProperty("/recipient/name");
             var sMsg = oBundle.getText("helloMsg", [sRecipient]);
+
+            MessageToast.show(sMsg);
+        },
+
+        onBye: function () {
+            var oBundle = this.getView().getModel("i18n").getResourceBundle();
+            var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+            var sMsg = oBundle.getText("byeMsg", [sRecipient]);
 
             MessageToast.show(sMsg);
         }
