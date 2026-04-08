@@ -1,0 +1,13 @@
+{
+  "name": "simpleinterestui5",
+  "version": "1.0.0",
+  "description": "Simple Interest Calculator SAP UI5 Application",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve -o index.html",
+    "build": "ui5 build -a --clean-dest"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^4.0.0"
+  }
+}
