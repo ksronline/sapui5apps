@@ -23,16 +23,19 @@
                                 valueLiveUpdate="true"
                                 width="300px"
                                 class="sapUiSmallMarginBottom" />
-                            <Button
-                                id="helloButton"
-                                text="{i18n>showHelloButtonText}"
-                                press=".onShowHello"
-                                class="sapUiSmallMarginBottom" />
-                            <Button
-                                id="byeButton"
-                                text="{i18n>byeButtonText}"
-                                press=".onBye"
-                                class="sapUiSmallMarginBottom" />
+                            <HBox
+                                alignItems="Center"
+                                class="sapUiSmallMarginBottom">
+                                <Button
+                                    id="helloButton"
+                                    text="{i18n>showHelloButtonText}"
+                                    press=".onShowHello"
+                                    class="sapUiSmallMarginEnd" />
+                                <Button
+                                    id="byeButton"
+                                    text="{i18n>byeButtonText}"
+                                    press=".onBye" />
+                            </HBox>
                         </VBox>
                     </content>
                 </Page>
