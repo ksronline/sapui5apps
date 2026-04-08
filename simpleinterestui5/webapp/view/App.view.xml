@@ -1,0 +1,112 @@
+<mvc:View
+    controllerName="com.demo.simpleinterest.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    displayBlock="true">
+
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>homePageTitle}">
+                    <content>
+                        <VBox
+                            class="sapUiSmallMargin"
+                            alignItems="Center"
+                            justifyContent="Center">
+                            <Title
+                                id="appTitle"
+                                text="{i18n>appHeading}"
+                                class="sapUiMediumMarginBottom" />
+                            <form:SimpleForm
+                                id="simpleInterestForm"
+                                editable="true"
+                                layout="ResponsiveGridLayout"
+                                labelSpanXL="4"
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                emptySpanXL="3"
+                                emptySpanL="3"
+                                emptySpanM="3"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1">
+                                <form:content>
+                                    <Label id="principalLabel" text="{i18n>principalLabel}" />
+                                    <Input
+                                        id="principalInput"
+                                        value="{/principal}"
+                                        type="Number"
+                                        placeholder="{i18n>principalPlaceholder}"
+                                        width="100%" />
+
+                                    <Label id="rateLabel" text="{i18n>rateLabel}" />
+                                    <Input
+                                        id="rateInput"
+                                        value="{/rate}"
+                                        type="Number"
+                                        placeholder="{i18n>ratePlaceholder}"
+                                        width="100%" />
+
+                                    <Label id="timeLabel" text="{i18n>timeLabel}" />
+                                    <Input
+                                        id="timeInput"
+                                        value="{/time}"
+                                        type="Number"
+                                        placeholder="{i18n>timePlaceholder}"
+                                        width="100%" />
+                                </form:content>
+                            </form:SimpleForm>
+
+                            <HBox
+                                alignItems="Center"
+                                class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+                                <Button
+                                    id="calculateButton"
+                                    text="{i18n>calculateButtonText}"
+                                    type="Emphasized"
+                                    press=".onCalculate"
+                                    class="sapUiSmallMarginEnd" />
+                                <Button
+                                    id="clearButton"
+                                    text="{i18n>clearButtonText}"
+                                    press=".onClear" />
+                            </HBox>
+
+                            <Panel
+                                id="resultPanel"
+                                headerText="{i18n>resultPanelTitle}"
+                                class="sapUiSmallMarginTop"
+                                visible="{= ${/simpleInterest} !== '' }">
+                                <content>
+                                    <VBox class="sapUiSmallMargin">
+                                        <HBox class="sapUiSmallMarginBottom">
+                                            <Label
+                                                id="siResultLabel"
+                                                text="{i18n>simpleInterestLabel}"
+                                                class="sapUiSmallMarginEnd" />
+                                            <Text
+                                                id="siResultText"
+                                                text="{/simpleInterest}" />
+                                        </HBox>
+                                        <HBox>
+                                            <Label
+                                                id="totalResultLabel"
+                                                text="{i18n>totalAmountLabel}"
+                                                class="sapUiSmallMarginEnd" />
+                                            <Text
+                                                id="totalResultText"
+                                                text="{/totalAmount}" />
+                                        </HBox>
+                                    </VBox>
+                                </content>
+                            </Panel>
+                        </VBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
